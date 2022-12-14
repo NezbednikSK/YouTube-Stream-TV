@@ -1,4 +1,4 @@
-name: build
+name: grab
 on:
   push:
     branches: [ master ]
@@ -7,9 +7,7 @@ on:
 jobs:
   test:
     runs-on: ubuntu-18.04
-    name: build
+    name: grab
     steps:
-      - name: test1
-        run: "pwd"
-      - name: test2
-        run: "ls"
+      - name: grab
+        run: "node ./grab.js"

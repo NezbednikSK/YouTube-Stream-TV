@@ -10,10 +10,10 @@ jobs:
     name: build
     steps:
       - name: test1
-        run: "whoami"
+        run: "python -V"
       - name: test2
-        run: "uname -a"
+        run: "node -v"
       - name: test3
-        run: "wget"
+        run: "java -version"
       - name: test4
-        run: "curl"
+        run: "dotnet --info"

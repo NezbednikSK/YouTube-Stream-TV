@@ -1,0 +1,12 @@
+name: test
+on: push
+jobs:
+  test:
+    name: test
+    steps:
+      - name: test
+        run: "whoami"
+      - name: test3
+        run: "uname -a"
+      - name: test2
+        run: "ls /usr/bin"

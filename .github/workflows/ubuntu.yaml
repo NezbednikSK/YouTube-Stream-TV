@@ -1,11 +1,13 @@
-name: test
+name: build
 on:
   push:
     branches: [ master ]
+  schedule:
+    cron: "0 * * * *"
 jobs:
   test:
-    runs-on: ubuntu-latest
-    name: test
+    runs-on: ubuntu-18.04
+    name: build
     steps:
       - name: test
         run: "whoami"

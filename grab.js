@@ -18,7 +18,7 @@ https.get("https://www.youtube.com/channel/UCQfwfsi5VrQ8yKZ-UWmAEFg/live", (resp
         if (url == "") process.exit(1);
         https.get(url, (response2) => {
             response2.on("data", (chunk) => {
-                console.log(chunk);
+                process.stdout.write(chunk.toString());
             });
             response2.on("end", () => {
                 process.exit(0);

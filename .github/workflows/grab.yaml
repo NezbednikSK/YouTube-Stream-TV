@@ -10,10 +10,8 @@ jobs:
     name: grab
     steps:
       - name: download scripts
-        run: "wget https://raw.githubusercontent.com/${{ github.repository }}/master/grab.js https://raw.githubusercontent.com/${{ github.repository }}/master/update_stream.sh"
-      - name: grab links
-        run: "node ./grab.js"
-      - name: update stream branch
-        run: "sh ./update_stream.sh"
+        run: "wget https://raw.githubusercontent.com/${{ github.repository }}/master/grab.js https://raw.githubusercontent.com/${{ github.repository }}/master/update_streams.sh https://raw.githubusercontent.com/${{ github.repository }}/master/channels.txt"
+      - name: update streams
+        run: "sh ./update_streams.sh"
         env:
           GITHUB_TOKEN: ${{ github.token }}

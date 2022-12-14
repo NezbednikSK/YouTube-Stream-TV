@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/bash
 while read p; do
   export "RAW=$(sed "s/ /\\n/g" <<< "$p")"
   export "CHANNEL_ID=$(head -n 1 <<< "$RAW")"

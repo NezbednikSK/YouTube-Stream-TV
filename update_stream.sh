@@ -1,10 +1,10 @@
 #!/bin/sh
-export "SHA=$(curl -H "Authorization: Bearer $GITHUB_TOKEN" "https://api.github.com/repos/$GITHUB_REPOSITORY/contents/CN.m3u8?ref=stream" | node -e "var body = \"\"; \
-process.stdin.on(\"data\", (c) => {
-  body += c.toString();
-});
-process.stdin.on(\"end\", () => {
-  process.stdout.write(JSON.parse(body).sha);
+export "SHA=$(curl -s -H "Authorization: Bearer $GITHUB_TOKEN" "https://api.github.com/repos/$GITHUB_REPOSITORY/contents/CN.m3u8?ref=stream" | node -e "var body = \"\"; \
+process.stdin.on(\"data\", (c) => { \
+  body += c.toString(); \
+}); \
+process.stdin.on(\"end\", () => { \
+  process.stdout.write(JSON.parse(body).sha); \
 });")"
 
 echo "$SHA"

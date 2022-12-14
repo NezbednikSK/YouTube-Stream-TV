@@ -1,8 +1,8 @@
 #!/bin/bash
 while read p; do
   export "RAW=$(echo "$p" | sed "s/ /\\n/g")"
-  export "CHANNEL_ID=$(head -n 1 <<< "$RAW")"
-  export "M3U=$(tail -n 1 <<< "$RAW")"
+  export "CHANNEL_ID=$(echo "$RAW" | head -n 1)"
+  export "M3U=$(echo "$RAW" | tail -n 1)"
   
   node ./grab.js "$CHANNEL_ID" > "$M3U.m3u8"
   

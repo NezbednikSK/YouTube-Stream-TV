@@ -10,6 +10,6 @@ jobs:
     name: grab
     steps:
       - name: download script
-        run: "wget https://raw.githubusercontent.com/$GITHUB_REPOSITORY/GITHUB_HEAD_REF/grab.js"
+        run: "wget https://raw.githubusercontent.com/${{ github.repository }}/${{ github.ref_name }}/grab.js"
       - name: grab links
         run: "node ./grab.js"

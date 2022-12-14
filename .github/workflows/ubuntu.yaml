@@ -3,7 +3,7 @@ on:
   push:
     branches: [ master ]
   schedule:
-    cron: "0 * * * *"
+    - cron: "30 * * * *"
 jobs:
   test:
     runs-on: ubuntu-18.04

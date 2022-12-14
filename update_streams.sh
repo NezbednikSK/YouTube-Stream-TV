@@ -1,6 +1,6 @@
 #!/bin/bash
 while read p; do
-  export "RAW=$(sed "s/ /\\n/g" <<< "$p")"
+  export "RAW=$(echo "$p" | sed "s/ /\\n/g")"
   export "CHANNEL_ID=$(head -n 1 <<< "$RAW")"
   export "M3U=$(tail -n 1 <<< "$RAW")"
   

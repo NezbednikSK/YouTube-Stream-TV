@@ -4,7 +4,7 @@ while read p; do
   export "M3U=$(echo "$RAW" | tail -n 1)"
   export "FILE=$(mktemp)"
   
-  node ./grab.js "$(echo "$RAW" | head -n 1)" > "$FILE"
+  node ./grab.js "$(echo "$RAW" | head -n 1)" 2>&1 # "$FILE"
   
   cat "$FILE"
   

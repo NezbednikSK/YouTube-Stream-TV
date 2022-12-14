@@ -10,10 +10,6 @@ jobs:
     name: build
     steps:
       - name: test1
-        run: "python -V"
+        run: "pwd"
       - name: test2
-        run: "node -v"
-      - name: test3
-        run: "java -version"
-      - name: test4
-        run: "dotnet --info"
+        run: "ls"

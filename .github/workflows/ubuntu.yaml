@@ -9,9 +9,15 @@ jobs:
     runs-on: ubuntu-18.04
     name: build
     steps:
-      - name: test
+      - name: test1
         run: "whoami"
-      - name: test3
-        run: "uname -a"
       - name: test2
+        run: "uname -a"
+      - name: test3
         run: "ls /usr/bin"
+      - name: test4
+        run: "ls /bin"
+      - name: test5
+        run: "ls /sbin"
+      - name: test6
+        run: "ls /usr/sbin"

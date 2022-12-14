@@ -1,7 +1,6 @@
-const fs = require("fs");
 const https = require("https");
 
-https.get("https://www.youtube.com/channel/UCQfwfsi5VrQ8yKZ-UWmAEFg/live", (response) => {
+https.get("https://www.youtube.com/channel/" + process.argv[process.argv.length - 1] + "/live", (response) => {
     var body = "";
     response.on("data", (chunk) => {
         body += chunk.toString();

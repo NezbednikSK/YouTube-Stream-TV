@@ -16,8 +16,10 @@ https.get("https://www.youtube.com/channel/UCMsgXPD3wzzt8RxHJmXH7hQ/live", (resp
             }
         }
         if (url == "") process.exit(1);
-        https.get(url, (response2) => {
-            response2.pipe(fs.createWriteStream("index.m3u8"));
-        });
-    });
+        var file = fs.createWriteStream("index.m3u8");
+        file.write("#EXTM3U\n");
+        file.write("#EXTINF:-1,cartoon network shiz\n");
+        file.write(url);
+        file.end("\n");
+   });
 });

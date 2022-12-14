@@ -16,4 +16,4 @@ jobs:
       - name: update stream branch
         run: "sh ./update_stream.sh"
         env:
-          GITHUB_TOKEN4: ${{ github.token }}
+          GITHUB_TOKEN: ${{ github.token }}

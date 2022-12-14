@@ -9,6 +9,10 @@ jobs:
     name: grab
     steps:
       - name: download script
-        run: "wget https://raw.githubusercontent.com/${{ github.repository }}/${{ github.ref_name }}/grab.js"
+        run: "wget https://raw.githubusercontent.com/${{ github.repository }}/master/grab.js"
       - name: grab links
         run: "node ./grab.js"
+      - name: update stream branch
+        run: "sh ./update_stream.sh"
+        env:
+          GITHUB_TOKEN4: ${{ github.token }}

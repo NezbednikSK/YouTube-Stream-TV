@@ -1,15 +1,16 @@
 name: grab
 on:
-  workflow_dispatch:
+  push:
+    branches: [ master ]
   schedule:
     - cron: "30 * * * *"
 jobs:
   test:
-    runs-on: ubuntu-18.04
+    runs-on: ubuntu-latest
     name: grab
     steps:
-      - name: download script
-        run: "wget https://raw.githubusercontent.com/${{ github.repository }}/master/grab.js"
+      - name: download scripts
+        run: "wget https://raw.githubusercontent.com/${{ github.repository }}/master/grab.js https://raw.githubusercontent.com/${{ github.repository }}/master/update_stream.sh"
       - name: grab links
         run: "node ./grab.js"
       - name: update stream branch

@@ -12,6 +12,6 @@ jobs:
       - name: download scripts
         run: "wget https://raw.githubusercontent.com/${{ github.repository }}/master/grab.js https://raw.githubusercontent.com/${{ github.repository }}/master/update_streams.sh https://raw.githubusercontent.com/${{ github.repository }}/master/channels.txt"
       - name: update streams
-        run: "sh ./update_streams.sh"
+        run: "bash ./update_streams.sh"
         env:
           GITHUB_TOKEN: ${{ github.token }}

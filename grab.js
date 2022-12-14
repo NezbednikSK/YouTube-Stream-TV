@@ -17,7 +17,12 @@ https.get("https://www.youtube.com/channel/UCQfwfsi5VrQ8yKZ-UWmAEFg/live", (resp
         }
         if (url == "") process.exit(1);
         https.get(url, (response2) => {
-            response2.pipe(fs.createWriteStream("index.m3u8"));
+            response2.on("data", (chunk) => {
+                console.log(chunk);
+            });
+            response2.on("end", () => {
+                process.exit(0);
+            });
         });
     });
 });
